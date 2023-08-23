@@ -21,7 +21,7 @@ function Footer() {
             size={50}
           />
         </div>
-        <div className="flex my-6  gap-6 justify-center">
+        <div className="flex my-6  gap-6 justify-center relative">
           <img
             className="hidden md:block fixed top-0 -right-20 w-96 "
             src={rightPic}
