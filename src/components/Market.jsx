@@ -7,14 +7,15 @@ function Market(props) {
 
   return (
     <div>
-      <div className="flex flex-col items-center max-w-7xl m-auto md:mt-28 drop-shadow-md rounded-xl  border-[1px]">
-        <h2 className="mx-8 mt-4 text-xl md:text-2xl  lg:text-3xl font-bold">
+      <div className="md:mt-28 drop-shadow-md rounded-xl  border-[1px] overflow-x-auto">
+        <h2 className="mt-4 text-xl md:text-2xl  lg:text-3xl font-bold">
           Today's Cryptocurrency Prices by Market Cap
         </h2>
 
         {/** Grid for the crypto  */}
-        <table className="w-11/12 md:w-full ">
-          <tr className=" h-10 mx-10 mt-5 text-sm md:text-xl bg-color--secondary text-white font-medium">
+        <table className="w-full">
+          <tr className=" h-10 w-max mt-5 text-sm md:text-xl bg-color--secondary text-white font-medium">
+            <th>#</th>
             <th>Name</th>
             <th>Price</th>
             <th>24h %</th>
@@ -25,9 +26,12 @@ function Market(props) {
           {props.coins.map((coin) => (
             <tr
               key={coin.id}
-              className="h-10 text-sm  md:text-lg border-b-[1px] border-gray-500/50"
+              className="h-10  text-sm md:text-lg border-b-[1px] border-gray-500/50"
             >
               <th>
+                <h4>{coin.market_cap_rank}</h4>
+              </th>
+              <th className="">
                 <h4 className="flex flex-row items-center">
                   <span className="w-6 mr-1">
                     <img

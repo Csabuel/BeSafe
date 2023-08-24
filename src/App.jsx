@@ -25,6 +25,8 @@ function App() {
       });
   }, []);
 
+  console.log(coins);
+
   return (
     <div>
       <Navbar />
