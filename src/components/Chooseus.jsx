@@ -8,7 +8,10 @@ import choosePic from "/src/pic/newsletter_bg_light.svg";
 
 function Chooseus() {
   return (
-    <div className="max-w-6xl m-auto md:mt-28 flex flex-col justify-center items-center">
+    <div
+      id="chooseus"
+      className="max-w-6xl m-auto md:mt-28 flex flex-col justify-center items-center"
+    >
       <h1 className="my-8 text-3xl md:text-6xl uppercase font-bold  md:mb-10">
         Why{" "}
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">

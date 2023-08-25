@@ -3,6 +3,8 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { BsSafe2Fill, BsTwitter, BsDiscord } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 
+import { Link, useNavigate } from "react-router-dom";
+
 function Navbar() {
   const [nav, setNav] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -12,6 +14,13 @@ function Navbar() {
   };
 
   window.addEventListener("scroll", stickNavbar);
+
+  const goTop = () => {
+    window.scrollTo({
+      top: (0, 0),
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div>
@@ -25,7 +34,10 @@ function Navbar() {
         }  `}
       >
         {/**Left part */}
-        <div className="flex items-center text-color--secondary italic text-3xl">
+        <div
+          onClick={goTop}
+          className="flex items-center text-color--secondary italic text-3xl cursor-pointer"
+        >
           <BsSafe2Fill />
           <p>
             Be<span className="font-bold">$</span>afe
@@ -35,20 +47,23 @@ function Navbar() {
         <div>
           <ul className="gap-6 hidden md:flex md:flex-row md:text-xl xl:text-2xl ">
             <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
-              Home
+              <a href="#hero">Home</a>
+            </li>
+
+            <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
+              <a href="#market">Market</a>
+            </li>
+
+            <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
+              <a className="" href="#chooseus">
+                Choose Us
+              </a>
             </li>
             <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
-              Market
-            </li>
-            <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
-              Choose Us
-            </li>
-            <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
-              Join
+              <a href="#join">Join</a>
             </li>
           </ul>
         </div>
-        {/**Right part */}
 
         {nav ? (
           ""
@@ -85,38 +100,40 @@ function Navbar() {
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
             >
-              Home
+              <a href="#hero">Home</a>
             </li>
             <li
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
             >
-              Market
+              <a href="#market">Market</a>
             </li>
             <li
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
             >
-              Choose Us
+              <a className="" href="#chooseus">
+                Choose Us
+              </a>
             </li>
             <li
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
             >
-              Join
+              <a href="#join">Join</a>
             </li>
           </ul>
         </div>
 
-        <div className="hidden md:flex md:flex-row gap-6 ">
-          <BsDiscord
-            size={30}
-            className="hover:text-color--secondary transition duration-300 cursor-pointer"
-          />
-          <BsTwitter
-            size={30}
-            className="hover:text-color--secondary transition duration-300 cursor-pointer"
-          />
+        {/**Right part */}
+
+        <div className="hidden md:flex md:flex-row gap-2 ">
+          <button className="border-2 text-color--secondary border-color--secondary rounded-full w-20 h-8 text-sm font-bold hover:bg-color--secondary hover:text-white transition">
+            Log In
+          </button>
+          <button className="border-2 text-white bg-color--secondary font-bold border-color--secondary rounded-full w-20 h-8 text-sm hover:text-color--secondary hover:bg-white transition">
+            Sign Up
+          </button>
         </div>
       </div>
     </div>

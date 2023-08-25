@@ -5,7 +5,7 @@ import rightPic from "/src/pic/right.png";
 
 function Footer() {
   return (
-    <div>
+    <div id="join">
       <footer className=" w-full h-96 md:h-72 drop-shadow-md border-t-[1px] mt-20  overflow-hidden">
         <div className="flex mt-52 md:my-16  gap-6 justify-center ">
           <AiOutlineTwitter

@@ -13,7 +13,7 @@ function Hero(props) {
   //console.log(firstCrypto);
 
   return (
-    <div>
+    <div id="hero">
       <div className="mt-40 text-6xl h-96 text-center font-bold relative">
         Your{" "}
         <span className=" capitalize font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
