@@ -3,7 +3,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { BsSafe2Fill, BsTwitter, BsDiscord } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -128,9 +128,11 @@ function Navbar() {
         {/**Right part */}
 
         <div className="hidden md:flex md:flex-row gap-2 ">
+          <Link to="/signin">Singin </Link>
           <button className="border-2 text-color--secondary border-color--secondary rounded-full w-20 h-8 text-sm font-bold hover:bg-color--secondary hover:text-white transition">
             Log In
           </button>
+
           <button className="border-2 text-white bg-color--secondary font-bold border-color--secondary rounded-full w-20 h-8 text-sm hover:text-color--secondary hover:bg-white transition">
             Sign Up
           </button>
