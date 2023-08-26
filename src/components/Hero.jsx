@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import btc from "/src/pic/bitcoin.png";
 import eth from "/src/pic/ethereum.png";
 import { AiOutlineArrowDown } from "react-icons/ai";
@@ -55,7 +55,7 @@ function Hero(props) {
         </div>
         <div>
           <button className="text-lg sm:hidden mt-20 flex items-center gap-2 justify-center mx-auto bg-color--secondary w-48 rounded-full h-12">
-            Check Prices
+            <a href="#market">Check Prices</a>
             <span>
               <AiOutlineArrowDown />
             </span>

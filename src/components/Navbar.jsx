@@ -47,7 +47,7 @@ function Navbar() {
         <div>
           <ul className="gap-6 hidden md:flex md:flex-row md:text-xl xl:text-2xl ">
             <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
-              <a href="#hero">Home</a>
+              <Link to="/besafe/">Home</Link>
             </li>
 
             <li className="hover:text-color--secondary transition duration-300 cursor-pointer">
@@ -96,18 +96,22 @@ function Navbar() {
             onClick={() => setNav(!nav)}
           />
           <ul className="flex flex-col items-center justify- mt-[200px] gap-6 ">
-            <li
-              className="hover:text-color--secondary transition duration-300 cursor-pointer"
-              onClick={() => setNav(!nav)}
-            >
-              <a href="#hero">Home</a>
-            </li>
+            <Link to="/besafe/">
+              <li
+                className="hover:text-color--secondary transition duration-300 cursor-pointer"
+                onClick={() => setNav(!nav)}
+              >
+                Home
+              </li>
+            </Link>
+
             <li
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
             >
               <a href="#market">Market</a>
             </li>
+
             <li
               className="hover:text-color--secondary transition duration-300 cursor-pointer"
               onClick={() => setNav(!nav)}
@@ -123,19 +127,39 @@ function Navbar() {
               <a href="#join">Join</a>
             </li>
           </ul>
+          <div className="flex flex-col gap-3 items-center h-full justify-center">
+            <Link to="/SignIn">
+              <button
+                onClick={() => setNav(!nav)}
+                className="border-2 text-color--secondary border-color--secondary rounded-full w-32 h-8 text-sm font-bold hover:bg-color--secondary hover:text-white transition"
+              >
+                Sign In
+              </button>
+            </Link>
+            <Link to="/SignUp">
+              <button
+                onClick={() => setNav(!nav)}
+                className="border-2 text-white bg-color--secondary font-bold border-color--secondary rounded-full w-32 h-8 text-sm hover:text-color--secondary hover:bg-white transition"
+              >
+                Sign Up
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/**Right part */}
 
         <div className="hidden md:flex md:flex-row gap-2 ">
-          <Link to="/signin">Singin </Link>
-          <button className="border-2 text-color--secondary border-color--secondary rounded-full w-20 h-8 text-sm font-bold hover:bg-color--secondary hover:text-white transition">
-            Log In
-          </button>
-
-          <button className="border-2 text-white bg-color--secondary font-bold border-color--secondary rounded-full w-20 h-8 text-sm hover:text-color--secondary hover:bg-white transition">
-            Sign Up
-          </button>
+          <Link to="/SignIn">
+            <button className="border-2 text-color--secondary border-color--secondary rounded-full w-20 h-8 text-sm font-bold hover:bg-color--secondary hover:text-white transition">
+              Sign In
+            </button>{" "}
+          </Link>
+          <Link to="/SignUp">
+            <button className="border-2 text-white bg-color--secondary font-bold border-color--secondary rounded-full w-20 h-8 text-sm hover:text-color--secondary hover:bg-white transition">
+              Sign Up
+            </button>{" "}
+          </Link>
         </div>
       </div>
     </div>

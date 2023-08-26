@@ -1,36 +1,24 @@
-import { useEffect, useState } from "react";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Market from "./components/Market";
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-import axios from "axios";
-import Chooseus from "./components/Chooseus";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Account from "./components/Account";
 
 function App() {
-  const [coins, setCoins] = useState([]);
-
-  const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&locale=en";
-
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setCoins(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
     <div>
       <Navbar />
-      <Hero coins={coins} />
-      <Market coins={coins} />
-      <Chooseus />
+      <Routes>
+        <Route path="/besafe/" element={<Home />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Account" element={<Account />} />
+      </Routes>
+
       <Footer />
     </div>
   );
